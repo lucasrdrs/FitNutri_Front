@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FitNutri.Views.FloatingNavBar">
+
+    <Border BackgroundColor="#F0F4F5" 
+            HeightRequest="70" 
+            WidthRequest="320"
+            HorizontalOptions="Center" 
+            VerticalOptions="End" 
+            Margin="0,0,0,30"
+            StrokeThickness="0">
+        <Border.StrokeShape>
+            <RoundRectangle CornerRadius="35" />
+        </Border.StrokeShape>
+        <Border.Shadow>
+            <Shadow Brush="#101422" Offset="0,10" Radius="20" Opacity="0.15" />
+        </Border.Shadow>
+
+        <Grid ColumnDefinitions="*, *, *, *, *">
+            <ImageButton Grid.Column="0" Source="home_icon.png" Clicked="OnFeedClicked" BackgroundColor="Transparent" Padding="15" />
+            <ImageButton Grid.Column="1" Source="shop_icon.png" Clicked="OnShopClicked" BackgroundColor="Transparent" Padding="15" />
+            <ImageButton Grid.Column="2" Source="chat.png" Clicked="OnChatClicked" BackgroundColor="Transparent" Padding="12" />
+            <ImageButton Grid.Column="3" Source="progress.png" Clicked="OnHomeClicked" BackgroundColor="Transparent" Padding="15" />
+            <ImageButton Grid.Column="4" Source="profile_icon.png" Clicked="OnProfileClicked" BackgroundColor="Transparent" Padding="15" />
+        </Grid>
+    </Border>
+    
+</ContentView>

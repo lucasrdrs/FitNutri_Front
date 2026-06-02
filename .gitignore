@@ -1,0 +1,51 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build artifacts
+bin/
+obj/
+*/bin/
+*/obj/
+
+# Rider
+.idea/
+
+# Visual Studio Code
+.vscode/
+
+# NuGet
+packages/
+*.nupkg
+project.lock.json
+
+# Azure
+.azure/
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# DotNet
+*.dll
+*.exe
+*.db
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Sensitive
+secrets.json
+appsettings.*.json
+
+# Others
+*.userprefs
+
+# Ignore local debug profiles
+Properties/launchSettings.json

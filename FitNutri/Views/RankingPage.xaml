@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FitNutri.Views"
+             x:Class="FitNutri.Views.RankingPage"
+             BackgroundColor="{StaticResource Background}"
+             Shell.NavBarIsVisible="False">
+
+    <Grid RowDefinitions="Auto, *">
+
+        <Border Grid.Row="0" BackgroundColor="{StaticResource Primary}" Padding="20, 40, 20, 30" StrokeThickness="0">
+            <VerticalStackLayout Spacing="20">
+                <Label Text="Ranking Semanal" TextColor="White" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
+                
+                <Grid ColumnDefinitions="*, *, *" ColumnSpacing="10" VerticalOptions="End" HeightRequest="150">
+
+                    <VerticalStackLayout Grid.Column="0" VerticalOptions="End" Spacing="5">
+                        <Border StrokeShape="RoundRectangle 40" HeightRequest="40" WidthRequest="40" StrokeThickness="2" Stroke="{StaticResource Accent}" HorizontalOptions="Center">
+                            <Image Source="profile_icon.png" Aspect="AspectFill" BackgroundColor= "white"/>
+                        </Border>
+                        <Label Text="Ana" TextColor="White" HorizontalOptions="Center" FontSize="12" />
+                        <Border BackgroundColor="{StaticResource Surface}" HeightRequest="60" StrokeThickness="0">
+                            <Label Text="2º" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" TextColor="{StaticResource Primary}" />
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Grid.Column="1" VerticalOptions="End" Spacing="5">
+                        <Border StrokeShape="RoundRectangle 40" HeightRequest="40" WidthRequest="40" StrokeThickness="3" Stroke="#FFD700" HorizontalOptions="Center">
+                            <Image Source="profile_icon.png" Aspect="AspectFill" BackgroundColor= "white"/>
+                        </Border>
+                        <Label Text="Marcos" TextColor="White" HorizontalOptions="Center" FontAttributes="Bold" />
+                        <Border BackgroundColor="{StaticResource Accent}" HeightRequest="90" StrokeThickness="0">
+                            <Label Text="1º" VerticalOptions="Center" HorizontalOptions="Center" FontSize="24" FontAttributes="Bold" TextColor="{StaticResource Primary}" />
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Grid.Column="2" VerticalOptions="End" Spacing="5">
+                        <Border StrokeShape="RoundRectangle 25" HeightRequest="40" WidthRequest="40" StrokeThickness="2" Stroke="{StaticResource Surface}" HorizontalOptions="Center">
+                            <Image Source="profile_icon.png" Aspect="AspectFill" BackgroundColor= "white"/>
+                        </Border>
+                        <Label Text="Julia" TextColor="White" HorizontalOptions="Center" FontSize="12" />
+                        <Border BackgroundColor="{StaticResource Surface}" Opacity="0.7" HeightRequest="40" StrokeThickness="0">
+                            <Label Text="3º" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" TextColor="{StaticResource Primary}" />
+                        </Border>
+                    </VerticalStackLayout>
+                </Grid>
+            </VerticalStackLayout>
+        </Border>
+
+        <ScrollView Grid.Row="1" Padding="20">
+            <VerticalStackLayout Spacing="10">
+                <Border BackgroundColor="White" Padding="15" StrokeThickness="1" Stroke="{StaticResource Surface}">
+                    <Border.StrokeShape><RoundRectangle CornerRadius="15"/></Border.StrokeShape>
+                    <Grid ColumnDefinitions="Auto, Auto, *, Auto" ColumnSpacing="15">
+                        <Label Grid.Column="0" Text="4" VerticalOptions="Center" FontAttributes="Bold" TextColor="{StaticResource Gray}" />
+                        <Border Grid.Column="1" StrokeShape="RoundRectangle 20" HeightRequest="40" WidthRequest="40" StrokeThickness="0">
+                            <Image Source="profile_icon.png" Aspect="AspectFill" />
+                        </Border>
+                        <Label Grid.Column="2" Text="Ricardo Oliveira" VerticalOptions="Center" TextColor="#272B2F" FontAttributes="Bold" />
+                        <Label Grid.Column="3" Text="2.850 pts" VerticalOptions="Center" TextColor="{StaticResource Primary}" FontAttributes="Bold" />
+                    </Grid>
+                </Border>
+
+
+                <Border BackgroundColor="{StaticResource Accent}" Padding="15" StrokeThickness="0" Margin="0,10">
+                    <Border.StrokeShape><RoundRectangle CornerRadius="15"/></Border.StrokeShape>
+                    <Grid ColumnDefinitions="Auto, Auto, *, Auto" ColumnSpacing="15">
+                        <Label Grid.Column="0" Text="128" VerticalOptions="Center" FontAttributes="Bold" TextColor="{StaticResource Primary}" />
+                        <Border Grid.Column="1" StrokeShape="RoundRectangle 20" HeightRequest="40" WidthRequest="40" StrokeThickness="0">
+                            <Image Source="profile_icon.png" Aspect="AspectFill" />
+                        </Border>
+                        <Label Grid.Column="2" Text="Você (João Silva)" VerticalOptions="Center" FontAttributes="Bold" TextColor="{StaticResource Primary}" />
+                        <Label Grid.Column="3" Text="1.240 pts" VerticalOptions="Center" TextColor="{StaticResource Primary}" FontAttributes="Bold" />
+                    </Grid>
+                </Border>
+                
+                <BoxView HeightRequest="100" Color="Transparent" />
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <local:FloatingNavBar Grid.RowSpan="2" VerticalOptions="End" />
+    </Grid>
+</ContentPage>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FitNutri.Views"
+             x:Class="FitNutri.Views.ChatPage"
+             BackgroundColor="{StaticResource Background}"
+             Shell.NavBarIsVisible="False">
+
+    <Grid RowDefinitions="Auto, *, Auto">
+
+        <Border Grid.Row="0" BackgroundColor="{StaticResource Primary}" Padding="20, 40, 20, 20" StrokeThickness="0">
+            <Grid ColumnDefinitions="Auto, *, Auto" ColumnSpacing="15">
+
+                <Border Grid.Column="0" StrokeShape="RoundRectangle 20" HeightRequest="40" WidthRequest="40" StrokeThickness="0">
+                    <Image Source="nutri_avatar.png" Aspect="AspectFill" />
+                </Border>
+
+                <VerticalStackLayout Grid.Column="1" VerticalOptions="Center">
+                    <Label Text="Dra. Mariana Costa" TextColor="White" FontAttributes="Bold" FontSize="16" />
+                    <Label Text="Online agora" TextColor="{StaticResource Accent}" FontSize="12" />
+                </VerticalStackLayout>
+
+                <Button Grid.Column="2" 
+                Text="Dieta" 
+                Clicked="OnDietClicked"
+                BackgroundColor="{StaticResource Accent}"
+                TextColor="White"
+                FontAttributes="Bold"
+                CornerRadius="10"
+                HeightRequest="35"
+                Padding="15,0"
+                VerticalOptions="Center" />
+
+            </Grid>
+        </Border>
+
+        <ScrollView Grid.Row="1" Padding="20">
+            <VerticalStackLayout Spacing="15">
+                <Border HorizontalOptions="Start" BackgroundColor="{StaticResource Surface}" Padding="15" MaximumWidthRequest="280">
+                    <Border.StrokeShape><RoundRectangle CornerRadius="15, 15, 15, 0"/></Border.StrokeShape>
+                    <Label Text="Olá João! Como foi o seu treino hoje? Conseguiu bater a meta de proteínas?" TextColor="{StaticResource Secondary}" />
+                </Border>
+                <Label Text="10:30 AM" FontSize="10" TextColor="{StaticResource Gray}" HorizontalOptions="Start" Margin="5,-10,0,0" />
+
+                <Border HorizontalOptions="End" BackgroundColor="{StaticResource Primary}" Padding="15" MaximumWidthRequest="280">
+                    <Border.StrokeShape><RoundRectangle CornerRadius="15, 15, 0, 15"/></Border.StrokeShape>
+                    <Label Text="Oi Dra! Foi ótimo. Comi o frango e o whey conforme o plano." TextColor="White" />
+                </Border>
+                <Label Text="10:32 AM" FontSize="10" TextColor="{StaticResource Gray}" HorizontalOptions="End" Margin="0,-10,5,0" />
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <Border Grid.Row="2" BackgroundColor="White" Padding="15" StrokeThickness="1" Stroke="{StaticResource Surface}" Margin="0,0,0,80">
+            <Grid ColumnDefinitions="*, Auto" ColumnSpacing="10">
+                <Border Grid.Column="0" BackgroundColor="{StaticResource Surface}" Padding="10,0" StrokeThickness="0">
+                    <Border.StrokeShape><RoundRectangle CornerRadius="25"/></Border.StrokeShape>
+                    <Entry Placeholder="Digite sua mensagem..." BackgroundColor="Transparent" PlaceholderColor="{StaticResource Gray}" />
+                </Border>
+                <Button Grid.Column="1" BackgroundColor="{StaticResource Accent}" WidthRequest="50" HeightRequest="50" CornerRadius="25" Padding="0">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="&#x27A4;" Color="{StaticResource Primary}" Size="20" />
+                    </Button.ImageSource>
+                </Button>
+            </Grid>
+        </Border>
+
+        <local:FloatingNavBar Grid.RowSpan="3" VerticalOptions="End" />
+    </Grid>
+</ContentPage>

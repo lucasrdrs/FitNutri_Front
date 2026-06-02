@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FitNutri.Views.RegisterPage"
+             BackgroundColor="#F5F5F5"
+             Shell.NavBarIsVisible="False">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="15" Padding="30, 40, 30, 30" VerticalOptions="Center">
+
+            <Image Source="logo_fitnutri.png" 
+                   HeightRequest="100" HorizontalOptions="Center" Margin="0,0,0,10"/>
+
+            <Border StrokeShape="RoundRectangle 20" Padding="0" BackgroundColor="#212121" Margin="0,0,0,20">
+                <Grid>
+                    <Image Source="pattern_icons.png" Aspect="AspectFill" Opacity="0.5"/>
+
+                    <VerticalStackLayout Spacing="10" Padding="20" VerticalOptions="Fill">
+                        <Label Text="Cadastrar-se"
+                               FontSize="22"
+                               FontAttributes="Bold"
+                               TextColor="White"
+                               HorizontalOptions="Center" 
+                               Margin="0,0,0,10"/>
+
+                        <Border BackgroundColor="White" StrokeShape="RoundRectangle 25" Padding="0" Margin="0,0,0,10">
+                            <Entry Placeholder="E-mail" Keyboard="Email" HeightRequest="45" Margin="20,0" PlaceholderColor="#616161"/>
+                        </Border>
+
+                        <Border BackgroundColor="White" StrokeShape="RoundRectangle 25" Padding="0" Margin="0,0,0,10">
+                            <Entry Placeholder="Nome" Keyboard="Default" HeightRequest="45" Margin="20,0" PlaceholderColor="#616161"/>
+                        </Border>
+
+                        <Border BackgroundColor="White" StrokeShape="RoundRectangle 25" Padding="0" Margin="0,0,0,10">
+                            <Entry Placeholder="Senha" IsPassword="True" HeightRequest="45" Margin="20,0" PlaceholderColor="#616161"/>
+                        </Border>
+
+                        <Border BackgroundColor="White" StrokeShape="RoundRectangle 25" Padding="0" Margin="0,0,0,10">
+                            <Entry Placeholder="Confirmar senha" IsPassword="True" HeightRequest="45" Margin="20,0" PlaceholderColor="#616161"/>
+                        </Border>
+
+                        <Border BackgroundColor="White" StrokeShape="RoundRectangle 25" Padding="0" Margin="0,10,0,20">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnRegisterClicked" />
+                            </Border.GestureRecognizers>
+                            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center" Padding="20,12">
+                                <Label Text="Cadastrar" TextColor="#2E7D32" FontSize="16" FontAttributes="Bold" VerticalOptions="Center"/>
+                            </HorizontalStackLayout>
+                        </Border>
+
+                    </VerticalStackLayout>
+                </Grid>
+            </Border>
+
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="5">
+                <Label Text="Já possui cadastro?" TextColor="#616161" />
+                <Label Text="Faça Login" TextColor="#2E7D32" FontAttributes="Bold">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnLoginLabelTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

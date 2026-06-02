@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FitNutri.Views.LoginPage"
+             BackgroundColor="#F5F5F5"
+             Shell.NavBarIsVisible="False">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="30, 60, 30, 30" VerticalOptions="Center">
+
+            <Image Source="logo_fitnutri.png" 
+                   HeightRequest="120" HorizontalOptions="Center" Margin="0,0,0,20"/>
+
+            <Label Text="Bem-vindo ao FitNutri"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   TextColor="#2E7D32"
+                   HorizontalOptions="Center" />
+
+            <Label Text="Sua jornada para uma vida saudável começa aqui."
+                   FontSize="16"
+                   TextColor="#616161"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center" />
+
+            <VerticalStackLayout Spacing="15" Margin="0,20,0,0">
+                <Frame Padding="0" HasShadow="False" BorderColor="#E0E0E0" CornerRadius="10">
+                    <Entry Placeholder="E-mail" Keyboard="Email" HeightRequest="50" Margin="15,0"/>
+                </Frame>
+
+                <Frame Padding="0" HasShadow="False" BorderColor="#E0E0E0" CornerRadius="10">
+                    <Entry Placeholder="Senha" IsPassword="True" HeightRequest="50" Margin="15,0"/>
+                </Frame>
+
+                <Label Text="Esqueceu a senha?"
+                       TextColor="#2E7D32"
+                       FontSize="14"
+                       HorizontalOptions="End" />
+            </VerticalStackLayout>
+
+            <Button Text="ENTRAR"
+                    BackgroundColor="#2E7D32"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="50"
+                    FontAttributes="Bold"
+                    Clicked="OnLoginClicked" />
+
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="5">
+                <Label Text="Não tem uma conta?" TextColor="#616161" />
+                <Label Text="Registre-se" TextColor="#2E7D32" FontAttributes="Bold">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnRegisterLabelTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

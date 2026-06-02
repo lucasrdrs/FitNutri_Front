@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FitNutri.Views"
+             x:Class="FitNutri.Views.FindNutriPage"
+             BackgroundColor="{StaticResource Background}"
+             Shell.NavBarIsVisible="False">
+
+    <Grid RowDefinitions="Auto, Auto, *">
+        
+        <VerticalStackLayout Grid.Row="0" Padding="20, 40, 20, 10" Spacing="5">
+            <Label Text="Encontre seu Nutri" FontSize="28" FontAttributes="Bold" TextColor="{StaticResource Secondary}" />
+            <Label Text="Profissionais qualificados para sua meta" TextColor="{StaticResource Gray}" />
+        </VerticalStackLayout>
+
+        <Border Grid.Row="1" Margin="20,10" Padding="15,5" BackgroundColor="{StaticResource Surface}" StrokeThickness="0">
+            <Border.StrokeShape><RoundRectangle CornerRadius="25"/></Border.StrokeShape>
+            <Grid ColumnDefinitions="Auto, *">
+                <Image Source="search_icon.png" HeightRequest="20" Margin="0,0,10,0" />
+                <Entry Grid.Column="1" Placeholder="Buscar por nome ou especialidade..." BackgroundColor="Transparent" />
+            </Grid>
+        </Border>
+
+        <ScrollView Grid.Row="2" Padding="20,0,20,20">
+            <VerticalStackLayout Spacing="15">
+                <Border BackgroundColor="White" Padding="15" StrokeThickness="1" Stroke="{StaticResource Surface}">
+                    <Border.StrokeShape><RoundRectangle CornerRadius="15"/></Border.StrokeShape>
+                    <Grid ColumnDefinitions="80, *, Auto" ColumnSpacing="15">
+                        <Border Grid.Column="0" StrokeShape="RoundRectangle 40" HeightRequest="80" WidthRequest="80" StrokeThickness="0">
+                            <Image Source="nutri_avatar.png" Aspect="AspectFill" />
+                        </Border>
+                        <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="2">
+                            <Label Text="Dra. Mariana Costa" TextColor="#272B3B" FontAttributes="Bold" FontSize="16" />
+                            <Label Text="Nutrição Esportiva" TextColor="{StaticResource Primary}" FontSize="12" />
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="★ 4.9" TextColor="#FFD700" FontAttributes="Bold" />
+                                <Label Text="(120 avaliações)" TextColor="{StaticResource Gray}" FontSize="12" VerticalOptions="Center" />
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                        <Button Grid.Column="2" Text="Chat" BackgroundColor="{StaticResource Accent}" TextColor="{StaticResource Primary}" HeightRequest="35" WidthRequest="60" Padding="0" CornerRadius="17" FontSize="12" Clicked="OnChatClicked"/>
+                    </Grid>
+                </Border>
+
+                <Border BackgroundColor="White" Padding="15" StrokeThickness="1" Stroke="{StaticResource Surface}">
+                    <Border.StrokeShape><RoundRectangle CornerRadius="15"/></Border.StrokeShape>
+                    <Grid ColumnDefinitions="80, *, Auto" ColumnSpacing="15">
+                        <Border Grid.Column="0" StrokeShape="RoundRectangle 40" HeightRequest="80" WidthRequest="80" StrokeThickness="0">
+                            <Image Source="nutri2.png" Aspect="AspectFill" />
+                        </Border>
+                        <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="2">
+                            <Label Text="Dr. Roberto Lima" TextColor="#272B3B" FontAttributes="Bold" FontSize="16" />
+                            <Label Text="Emagrecimento" TextColor="{StaticResource Primary}" FontSize="12" />
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="★ 4.8" TextColor="#FFD700" FontAttributes="Bold" />
+                                <Label Text="(85 avaliações)" TextColor="{StaticResource Gray}" FontSize="12" VerticalOptions="Center" />
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                        <Button Grid.Column="2" Text="Chat" BackgroundColor="{StaticResource Accent}" TextColor="{StaticResource Primary}" HeightRequest="35" WidthRequest="60" Padding="0" CornerRadius="17" FontSize="12" />
+                    </Grid>
+                </Border>
+
+                <BoxView HeightRequest="100" Color="Transparent" />
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <local:FloatingNavBar Grid.RowSpan="3" VerticalOptions="End" />
+    </Grid>
+</ContentPage>

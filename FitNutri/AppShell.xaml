@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="FitNutri.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:FitNutri.Views"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False">
+
+
+    <ShellContent Title="Login" ContentTemplate="{DataTemplate local:LoginPage}" Route="LoginPage" />
+    <ShellContent Title="Registro" ContentTemplate="{DataTemplate local:RegisterPage}" Route="RegisterPage" />
+    <ShellContent Title="Feed" ContentTemplate="{DataTemplate local:FeedPage}" Route="FeedPage" />
+    <ShellContent Title="Home" ContentTemplate="{DataTemplate local:HomePage}" Route="HomePage" />
+    <ShellContent Title="Loja" ContentTemplate="{DataTemplate local:ShopPage}" Route="ShopPage" />
+    <ShellContent Title="Perfil" ContentTemplate="{DataTemplate local:ProfilePage}" Route="ProfilePage" />
+    
+    <ShellContent Title="Chat" ContentTemplate="{DataTemplate local:ChatPage}" Route="ChatPage" />
+    <ShellContent Title="Ranking" ContentTemplate="{DataTemplate local:RankingPage}" Route="RankingPage" />
+    <ShellContent Title="Encontrar Nutri" ContentTemplate="{DataTemplate local:FindNutriPage}" Route="FindNutriPage" />
+    <ShellContent Title="Plano Alimentar" ContentTemplate="{DataTemplate local:DietPage}" Route="DietPage" />
+
+</Shell>

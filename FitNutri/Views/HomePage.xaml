@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FitNutri.Views"
+             x:Class="FitNutri.Views.HomePage"
+             BackgroundColor="#F5F5F5"
+             Title="Home"
+             Shell.NavBarIsVisible="False">
+
+    <Grid>
+        <ScrollView>
+            <VerticalStackLayout Spacing="20" Padding="20">
+                
+                <HorizontalStackLayout Spacing="15" VerticalOptions="Center">
+                    <Border StrokeThickness="0" HeightRequest="50" WidthRequest="50">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="25" />
+                        </Border.StrokeShape>
+                        <Image Source="profile_icon.png" Aspect="AspectFill" />
+                    </Border>
+                    <VerticalStackLayout>
+                        <Label Text="Olá, Usuário!" FontSize="20" FontAttributes="Bold" TextColor="#2E7D32" />
+                        <Label Text="Como está sua dieta hoje?" FontSize="14" TextColor="#616161" />
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+
+                <Border BackgroundColor="#2E7D32" Padding="20" StrokeThickness="0">
+                    <Border.StrokeShape><RoundRectangle CornerRadius="15"/></Border.StrokeShape>
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Meta de Proteína" TextColor="White" FontSize="18" FontAttributes="Bold" />
+                        <Label Text="120g / 180g" TextColor="White" FontSize="24" FontAttributes="Bold" />
+                        <ProgressBar Progress="0.66" ProgressColor="#81C784" HeightRequest="10" />
+                        <Label Text="Faltam 60g para bater sua meta!" TextColor="#E8F5E9" FontSize="12" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <Label Text="Resumo do Dia" FontSize="18" FontAttributes="Bold" TextColor="#212121" Margin="0,10,0,0" />
+
+                <Button Text="Ver Plano Alimentar" 
+                        BackgroundColor="{StaticResource Accent}"
+                        TextColor="White"
+                        CornerRadius="10"
+                        HeightRequest="50"
+                        Command="{Binding Source={RelativeSource AncestorType={x:Type local:HomePage}}, Path=BindingContext.GoToDietPageCommand}" />
+
+                <Grid ColumnDefinitions="*, *" RowDefinitions="Auto, Auto" ColumnSpacing="15" RowSpacing="15">
+                    <Border Grid.Row="0" Grid.Column="0" Padding="15" BackgroundColor="White" StrokeThickness="0">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="12"/>
+                        </Border.StrokeShape>
+                        <VerticalStackLayout Spacing="5" HorizontalOptions="Center">
+                            <Label Text="Calorias" FontSize="14" TextColor="#616161" HorizontalOptions="Center" />
+                            <Label Text="1.850 kcal" FontSize="16" FontAttributes="Bold" TextColor="#2E7D32" HorizontalOptions="Center" />
+                        </VerticalStackLayout>
+                    </Border>
+                    <Border Grid.Row="0" Grid.Column="1" Padding="15" BackgroundColor="White" StrokeThickness="0">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="12"/>
+                        </Border.StrokeShape>
+                        <VerticalStackLayout Spacing="5" HorizontalOptions="Center">
+                            <Label Text="Água" FontSize="14" TextColor="#616161" HorizontalOptions="Center" />
+                            <Label Text="2.5 L" FontSize="16" FontAttributes="Bold" TextColor="#0288D1" HorizontalOptions="Center" />
+                        </VerticalStackLayout>
+                    </Border>
+                </Grid>
+                
+                <BoxView HeightRequest="100" Color="Transparent" />
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <local:FloatingNavBar VerticalOptions="End" />
+    </Grid>
+</ContentPage>

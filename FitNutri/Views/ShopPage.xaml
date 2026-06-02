@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FitNutri.Views"
+             x:Class="FitNutri.Views.ShopPage"
+             BackgroundColor="#F7F7F7"
+             Title="Loja FitNutri"
+             Shell.NavBarIsVisible="False">
+
+    <Grid>
+        <Grid RowDefinitions="Auto, Auto, *">
+
+            <Border Grid.Row="0" Margin="15,10" Padding="10,0" BackgroundColor="#FFFFFF" StrokeThickness="1" Stroke="#E0E0E0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+                <SearchBar Placeholder="Buscar suplementos..." HeightRequest="45" BackgroundColor="Transparent" TextColor="#1A1A1A" PlaceholderColor="#AAAAAA" />
+            </Border>
+
+            <ScrollView Grid.Row="1" Orientation="Horizontal" HorizontalScrollBarVisibility="Never" Margin="15,0,15,10">
+                <HorizontalStackLayout Spacing="10">
+                    <Button Text="Todos" BackgroundColor="#1A1A1A" TextColor="#FFFFFF" CornerRadius="20" HeightRequest="35" FontSize="12" />
+                    <Button Text="Proteínas" BackgroundColor="#FFFFFF" TextColor="#1A1A1A" BorderColor="#E0E0E0" BorderWidth="1" CornerRadius="20" HeightRequest="35" FontSize="12" />
+                    <Button Text="Creatina" BackgroundColor="#FFFFFF" TextColor="#1A1A1A" BorderColor="#E0E0E0" BorderWidth="1" CornerRadius="20" HeightRequest="35" FontSize="12" />
+                    <Button Text="Vitaminas" BackgroundColor="#FFFFFF" TextColor="#1A1A1A" BorderColor="#E0E0E0" BorderWidth="1" CornerRadius="20" HeightRequest="35" FontSize="12" />
+                </HorizontalStackLayout>
+            </ScrollView>
+
+            <CollectionView Grid.Row="2" Margin="10,0">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="2" VerticalItemSpacing="15" HorizontalItemSpacing="15" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemsSource>
+                    <x:Array Type="{x:Type local:ProductItem}">
+                        <local:ProductItem Name="Whey Protein Isolate" Description="900g - Chocolate" Price="R$ 189,90" Image="produto_whey.png" />
+                        <local:ProductItem Name="Multivitamínico" Description="60 cápsulas - Completo" Price="R$ 79,90" Image="produto_multi.png" />
+                        <local:ProductItem Name="Colágeno Hidrolisado" Description="300g - Sem Sabor" Price="R$ 99,90" Image="produto_colageno.png" />
+                        <local:ProductItem Name="Creatina" Description="500g - Pura" Price="R$ 129,90" Image="produto_creatina.png" />
+                    </x:Array>
+                </CollectionView.ItemsSource>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="local:ProductItem">
+                        <Border BackgroundColor="#FFFFFF" Padding="0" HorizontalOptions="Fill" VerticalOptions="Fill" StrokeThickness="1" Stroke="#E0E0E0">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="12" />
+                            </Border.StrokeShape>
+                            <VerticalStackLayout Spacing="5">
+                                <Image Source="{Binding Image}" Aspect="AspectFill" HeightRequest="130" />
+                                <VerticalStackLayout Padding="10" Spacing="2">
+                                    <Label Text="{Binding Name}" FontAttributes="Bold" TextColor="#1A1A1A" FontSize="14" />
+                                    <Label Text="{Binding Description}" TextColor="#888888" FontSize="11" />
+                                    <Label Text="{Binding Price}" FontAttributes="Bold" TextColor="#1A1A1A" FontSize="16" Margin="0,5,0,0" />
+                                    <Button Text="ADICIONAR" BackgroundColor="#1A1A1A" TextColor="#FFFFFF" CornerRadius="8" HeightRequest="35" FontSize="11" Margin="0,5,0,0" />
+                                </VerticalStackLayout>
+                            </VerticalStackLayout>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <CollectionView.Footer>
+                    <BoxView HeightRequest="100" Color="Transparent" />
+                </CollectionView.Footer>
+            </CollectionView>
+        </Grid>
+
+        <local:FloatingNavBar VerticalOptions="End" />
+    </Grid>
+</ContentPage>

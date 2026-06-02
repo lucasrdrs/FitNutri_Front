@@ -1,0 +1,112 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:FitNutri.ViewModels"
+             x:Class="FitNutri.Views.DietPage"
+             BackgroundColor="#F5F5F5"
+             Title="Plano Alimentar"
+             Shell.NavBarIsVisible="False">
+
+    <ContentPage.BindingContext>
+        <viewmodels:DietViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid RowDefinitions="Auto, *">
+        <Border Grid.Row="0"
+                BackgroundColor="{StaticResource Primary}"
+                Padding="20"
+                Margin="0,0,0,10">
+
+            <StackLayout Orientation="Horizontal"
+                         Spacing="15"
+                         VerticalOptions="Center">
+
+                <Button Text="&#x2190;" 
+                    Command="{Binding VoltarCommand}"
+                    BackgroundColor="Transparent"
+                    TextColor="White"
+                    FontSize="28"
+                    WidthRequest="50"
+                    HeightRequest="50"
+                    Padding="0"
+                    VerticalOptions="Center" />
+                
+                <Image Source="{Binding ProfessionalImage}"
+                       Aspect="AspectFill"
+                       HeightRequest="60"
+                       WidthRequest="60"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center">
+                    <Image.Clip>
+                        <EllipseGeometry Center="30,30" RadiusX="30" RadiusY="30" />
+                    </Image.Clip>
+                </Image>
+
+                <Label Text="Dra. Mariana Costa"
+                       TextColor="White"
+                       FontSize="Title"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center" />
+            </StackLayout>
+        </Border>
+
+        <CollectionView Grid.Row="1"
+                        ItemsSource="{Binding MealItems}"
+                        SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border StrokeShape="RoundRectangle 10"
+                            Stroke="{StaticResource Surface}"
+                            StrokeThickness="1"
+                            Padding="15"
+                            Margin="10,5">
+                        <Grid ColumnDefinitions="*, Auto, Auto, Auto">
+                            <StackLayout Grid.Column="0"
+                                         VerticalOptions="Center">
+                                <Label Text="{Binding Name}"
+                                       FontSize="Medium"
+                                       FontAttributes="Bold"
+                                       TextColor="{StaticResource Primary}" />
+                                <Label Text="{Binding Calories, StringFormat=\'{0} kcal\'}"
+                                       FontSize="Small"
+                                       TextColor="{StaticResource Secondary}" />
+                            </StackLayout>
+
+                            <Button Grid.Column="1"
+                                    Text="-"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:DietViewModel}}, Path=DecrementQuantityCommand}"
+                                    CommandParameter="{Binding .}"
+                                    WidthRequest="40"
+                                    HeightRequest="40"
+                                    CornerRadius="20"
+                                    BackgroundColor="{StaticResource Accent}"
+                                    TextColor="White"
+                                    FontSize="Medium"
+                                    VerticalOptions="Center" />
+
+                            <Label Grid.Column="2"
+                                   Text="{Binding Quantity}"
+                                   FontSize="Medium"
+                                   FontAttributes="Bold"
+                                   TextColor="{StaticResource Primary}"
+                                   VerticalOptions="Center"
+                                   HorizontalTextAlignment="Center"
+                                   WidthRequest="40" />
+
+                            <Button Grid.Column="3"
+                                    Text="+"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:DietViewModel}}, Path=IncrementQuantityCommand}"
+                                    CommandParameter="{Binding .}"
+                                    WidthRequest="40"
+                                    HeightRequest="40"
+                                    CornerRadius="20"
+                                    BackgroundColor="{StaticResource Accent}"
+                                    TextColor="White"
+                                    FontSize="Medium"
+                                    VerticalOptions="Center" />
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>
